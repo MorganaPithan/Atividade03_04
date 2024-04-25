@@ -7,7 +7,6 @@ import org.springframework.web.client.RestTemplate;
 
 public class ViaCepRestServiceImpl implements ExternalCepRestService {
     @Override
-
     public Endereco searchByCep(String cep) {
         String URL_ViaCep = "https://viacep.com.br/ws/" + cep + "/json";
         RestTemplate restTemplate = new RestTemplate();

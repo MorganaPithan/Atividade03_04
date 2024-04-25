@@ -18,7 +18,6 @@ public class BrasilApiRestServiceImpl implements ExternalCepRestService {
                     .bairro(brasilApi.getNeighborhood())
                     .logradouro(brasilApi.getStreet())
                     .build();
-
         }
         return null;
     }
