@@ -18,6 +18,7 @@ public class CepAbertoServiceImpl implements ExternalCepRestService {
     public Endereco searchByCep(String cep) {
         String URL_CepAberto = "https://www.cepaberto.com/api/v3/cep?cep=" + cep;
         RestTemplate restTemplate = new RestTemplate();
+
         CepAberto cepAberto = restTemplate.getForObject(URL_CepAberto, CepAberto.class, cep);
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", "Token token=0c6eab26e410d157732548165b0cef1c");
