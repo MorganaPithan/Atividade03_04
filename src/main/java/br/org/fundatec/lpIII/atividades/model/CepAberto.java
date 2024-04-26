@@ -2,24 +2,35 @@ package br.org.fundatec.lpIII.atividades.model;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Value;
 
 @Data
 @Builder
 public class CepAberto {
-    private String cidade;
-    private String estado;
-    private String bairro;
-    private String cep;
-    private String logradouro;
 
-    @Override
-    public String toString() {
-        return "CepAberto{" +
-                "cidade='" + cidade + '\'' +
-                ", estado='" + estado + '\'' +
-                ", bairro='" + bairro + '\'' +
-                ", cep='" + cep + '\'' +
-                ", logradouro='" + logradouro + '\'' +
-                '}';
+
+    @Value
+    private static class Cep{
+        private String cep;
+        private double altitude;
+        private double latitude;
+        private double longitude;
+        private String bairro;
+        private String logradouro;
+        private String cidade;
+        private String estado;
+
+        @Value
+        private static class Cidade{
+            private String nome;
+            private Integer ddd;
+            private String ibge;
+        }
+
+        @Value
+        private static class Estado{
+            private String sigla;
+        }
     }
+
 }

@@ -5,17 +5,17 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Address {
-    private String address;
+public class Location {
+//    private String address;
     private double lat;
     private double lng;
 
     @Override
     public String toString() {
-        return "Address{" +
-                "logradouro='" + address + '\'' +
-                ", latitude=" + lat +
-                ", longitude=" + lng +
+        return "location{" +
+//                "address='" + address + '\'' +
+                ", lat=" + lat +
+                ", lng=" + lng +
                 '}';
     }
 }

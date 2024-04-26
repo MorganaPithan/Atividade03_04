@@ -1,7 +1,8 @@
-package br.org.fundatec.lpIII.atividades.service.rest.impl;
+package br.org.fundatec.lpIII.atividades.service.rest;
 
-import br.org.fundatec.lpIII.atividades.model.Address;
+import br.org.fundatec.lpIII.atividades.model.Location;
 
-public class ExternalGoogleApiRestService {
-    Address searchByAddress(String address);
+
+public interface ExternalGoogleApiRestService {
+    Location searchByAddress(String address);
 }
