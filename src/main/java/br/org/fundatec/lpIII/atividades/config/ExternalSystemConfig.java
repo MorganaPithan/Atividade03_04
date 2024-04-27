@@ -25,6 +25,7 @@ public class ExternalSystemConfig {
     @Value("${app.cep.fallback-order}")
     private List<String> falbackOrder;
 
+
     @Bean
     public Map<String, ExternalCepRestService> externalSystemBean() {
         return Map.of(
