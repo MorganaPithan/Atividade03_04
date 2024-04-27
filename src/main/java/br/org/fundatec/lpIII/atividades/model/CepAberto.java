@@ -1,20 +1,27 @@
 package br.org.fundatec.lpIII.atividades.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.Value;
 
 
-@Builder
 @Data
+@Builder
 public class CepAberto {
-
+    private Cidade cidade;
+    private Estado estado;
+    private String bairro;
     private String cep;
     private String logradouro;
-    private String bairro;
-    private String cidade;
-    private String estado;
+
+    @Data
+    public static class Cidade{
+        private String nome;
+    }
+
+    @Data
+    public static class Estado{
+        private String sigla;
+    }
 }
 
 
