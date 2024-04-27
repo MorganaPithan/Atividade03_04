@@ -39,7 +39,6 @@ public class CepAbertoServiceImpl implements ExternalCepRestService {
         } catch (HttpClientErrorException e) {
             log.error( e.getMessage());
         }
-
         return null;
     }
 }

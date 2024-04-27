@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 public class CepAberto {
+
     private Cidade cidade;
     private Estado estado;
     private String bairro;
