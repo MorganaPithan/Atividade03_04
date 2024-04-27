@@ -1,7 +1,7 @@
 package br.org.fundatec.lpIII.atividades.service.rest.impl;
 
-import br.org.fundatec.lpIII.atividades.model.CepAberto;
-import br.org.fundatec.lpIII.atividades.model.Endereco;
+import br.org.fundatec.lpIII.atividades.model.CepAbertoDTO;
+import br.org.fundatec.lpIII.atividades.model.EnderecoDTO;
 import br.org.fundatec.lpIII.atividades.service.rest.ExternalCepRestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpEntity;
@@ -13,9 +13,9 @@ import org.springframework.web.client.RestTemplate;
 
 
 @Slf4j
-public class CepAbertoServiceImpl implements ExternalCepRestService {
+public class CepAbertoRestServiceImpl implements ExternalCepRestService {
     @Override
-    public Endereco searchByCep(String cep) {
+    public EnderecoDTO searchByCep(String cep) {
 
         String URL_CepAberto = "https://www.cepaberto.com/api/v3/cep?cep=" + cep;
 
@@ -25,10 +25,11 @@ public class CepAbertoServiceImpl implements ExternalCepRestService {
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<CepAberto> response = restTemplate.exchange(URL_CepAberto, HttpMethod.GET, entity, CepAberto.class);
-            CepAberto cepAbertoresponse = response.getBody();
+            ResponseEntity<CepAbertoDTO> response = restTemplate.exchange(URL_CepAberto, HttpMethod.GET, entity, CepAbertoDTO.class);
+            CepAbertoDTO cepAbertoresponse = response.getBody();
             if (cepAbertoresponse != null) {
-                return Endereco.builder()
+                return EnderecoDTO.builder()
+                        .api("CepAberto")
                         .cidade(cepAbertoresponse.getCidade().getNome())
                         .estado(cepAbertoresponse.getEstado().getSigla())
                         .bairro(cepAbertoresponse.getBairro())

@@ -1,6 +1,6 @@
 package br.org.fundatec.lpIII.atividades.service;
 
-import br.org.fundatec.lpIII.atividades.model.Endereco;
+import br.org.fundatec.lpIII.atividades.model.EnderecoDTO;
 import br.org.fundatec.lpIII.atividades.service.rest.ExternalCepRestService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,7 @@ public class CepService {
     private final ExternalCepRestService externalCepRestService;
 
 
-    public Endereco searchEndereco(String cep) {
+    public EnderecoDTO searchEndereco(String cep) {
 //        return externalCepFactory.create(apiConfig)
 //                .searchByCep(cep);
         return externalCepRestService.searchByCep(cep);

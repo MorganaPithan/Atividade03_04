@@ -5,7 +5,9 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Endereco {
+public class EnderecoDTO {
+
+    private String api;
     private String cep;
     private String logradouro;
     private String bairro;

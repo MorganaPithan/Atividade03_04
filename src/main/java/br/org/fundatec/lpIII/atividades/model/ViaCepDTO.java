@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ViaCep {
+public class ViaCepDTO {
+    private String api;
     private String cep;
     private String logradouro;
     private String bairro;

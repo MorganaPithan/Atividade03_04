@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CepAberto {
-
+public class CepAbertoDTO {
+    private String api;
     private Cidade cidade;
     private Estado estado;
     private String bairro;

@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 @Builder
-public class BrasilApi {
+public class BrasilApiDTO {
+    private String api;
     private String cep;
     private String state;
     private String city;

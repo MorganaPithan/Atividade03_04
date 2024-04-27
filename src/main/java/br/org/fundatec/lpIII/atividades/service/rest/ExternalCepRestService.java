@@ -1,7 +1,7 @@
 package br.org.fundatec.lpIII.atividades.service.rest;
 
-import br.org.fundatec.lpIII.atividades.model.Endereco;
+import br.org.fundatec.lpIII.atividades.model.EnderecoDTO;
 
 public interface ExternalCepRestService {
-    Endereco searchByCep(String cep);
+    EnderecoDTO searchByCep(String cep);
 }

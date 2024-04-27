@@ -1,7 +1,7 @@
 package br.org.fundatec.lpIII.atividades.service.rest;
 
 import br.org.fundatec.lpIII.atividades.service.rest.impl.BrasilApiRestServiceImpl;
-import br.org.fundatec.lpIII.atividades.service.rest.impl.CepAbertoServiceImpl;
+import br.org.fundatec.lpIII.atividades.service.rest.impl.CepAbertoRestServiceImpl;
 import br.org.fundatec.lpIII.atividades.service.rest.impl.ViaCepRestServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class ExternalCepFactory {
             "VIACEP",
             new ViaCepRestServiceImpl(),
             "CEPABERTO",
-            new CepAbertoServiceImpl()
+            new CepAbertoRestServiceImpl()
     );
 
     private final Map<String, ExternalCepRestService> externalCepRestServiceMap;

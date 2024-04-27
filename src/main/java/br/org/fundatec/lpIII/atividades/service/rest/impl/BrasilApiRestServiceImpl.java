@@ -1,18 +1,19 @@
 package br.org.fundatec.lpIII.atividades.service.rest.impl;
 
-import br.org.fundatec.lpIII.atividades.model.BrasilApi;
-import br.org.fundatec.lpIII.atividades.model.Endereco;
+import br.org.fundatec.lpIII.atividades.model.BrasilApiDTO;
+import br.org.fundatec.lpIII.atividades.model.EnderecoDTO;
 import br.org.fundatec.lpIII.atividades.service.rest.ExternalCepRestService;
 import org.springframework.web.client.RestTemplate;
 public class BrasilApiRestServiceImpl implements ExternalCepRestService {
     @Override
-    public Endereco searchByCep(String cep) {
+    public EnderecoDTO searchByCep(String cep) {
         String URL_BrasilApi = "https://brasilapi.com.br/api/cep/v1/" + cep;
         RestTemplate restTemplate = new RestTemplate();
-        BrasilApi brasilApi = restTemplate.getForObject(URL_BrasilApi, BrasilApi.class, cep);
+        BrasilApiDTO brasilApi = restTemplate.getForObject(URL_BrasilApi, BrasilApiDTO.class, cep);
         if (brasilApi != null) {
-            return Endereco.builder()
-                    .cep("BrasilApi")
+            return EnderecoDTO.builder()
+                    .api("BrasilApi")
+                    .cep(brasilApi.getCep())
                     .estado(brasilApi.getState())
                     .cidade(brasilApi.getCity())
                     .bairro(brasilApi.getNeighborhood())

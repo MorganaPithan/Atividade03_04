@@ -2,7 +2,7 @@ package br.org.fundatec.lpIII.atividades.config;
 
 import br.org.fundatec.lpIII.atividades.service.rest.ExternalCepRestService;
 import br.org.fundatec.lpIII.atividades.service.rest.impl.BrasilApiRestServiceImpl;
-import br.org.fundatec.lpIII.atividades.service.rest.impl.CepAbertoServiceImpl;
+import br.org.fundatec.lpIII.atividades.service.rest.impl.CepAbertoRestServiceImpl;
 import br.org.fundatec.lpIII.atividades.service.rest.impl.FallBackRestImpl;
 import br.org.fundatec.lpIII.atividades.service.rest.impl.ViaCepRestServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +31,7 @@ public class ExternalSystemConfig {
                 "VIACEP",
                 new ViaCepRestServiceImpl(),
                 "CEPABERTO",
-                new CepAbertoServiceImpl(),
+                new CepAbertoRestServiceImpl(),
                 "BRASILAPI",
                 new BrasilApiRestServiceImpl()
         );

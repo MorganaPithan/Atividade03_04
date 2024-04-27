@@ -1,6 +1,6 @@
 package br.org.fundatec.lpIII.atividades.service.rest.impl;
 
-import br.org.fundatec.lpIII.atividades.model.Endereco;
+import br.org.fundatec.lpIII.atividades.model.EnderecoDTO;
 import br.org.fundatec.lpIII.atividades.service.rest.ExternalCepRestService;
 import lombok.RequiredArgsConstructor;
 
@@ -11,15 +11,15 @@ public class FallBackRestImpl implements ExternalCepRestService {
     private final List<String> fallbackOrder;
     private List<ExternalCepRestService> externalImpl =
             List.of(
-                    new CepAbertoServiceImpl(),
+                    new CepAbertoRestServiceImpl(),
                     new BrasilApiRestServiceImpl(),
                     new ViaCepRestServiceImpl()
             );
 
     @Override
-    public Endereco searchByCep(String cep) {
+    public EnderecoDTO searchByCep(String cep) {
 
-        Endereco response = null;
+        EnderecoDTO response = null;
         for (ExternalCepRestService externalService : externalImpl) {
             try {
                  response = externalService.searchByCep(cep);
