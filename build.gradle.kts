@@ -21,6 +21,9 @@ dependencies {
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.apache.httpcomponents.client5:httpclient5:5.3.1")
+	implementation("com.fasterxml.jackson.core:jackson-core:2.17.0")
+	implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
 }
 
 tasks.withType<Test> {

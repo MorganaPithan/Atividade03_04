@@ -6,10 +6,9 @@ import br.org.fundatec.lpIII.atividades.service.rest.impl.CepAbertoServiceImpl;
 import br.org.fundatec.lpIII.atividades.service.rest.impl.FallBackRestImpl;
 import br.org.fundatec.lpIII.atividades.service.rest.impl.ViaCepRestServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
+
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
@@ -19,6 +18,9 @@ import java.util.Map;
 public class ExternalSystemConfig {
     @Value("${app.cep.api}")
     private String apiConfig;
+
+//    @Value("${app.google-maps.api-key}")
+//    private String apiKey;
 
     @Value("${app.cep.fallback-order}")
     private List<String> falbackOrder;
