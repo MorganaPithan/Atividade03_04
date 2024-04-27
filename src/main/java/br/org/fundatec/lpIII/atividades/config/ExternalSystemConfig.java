@@ -19,8 +19,6 @@ public class ExternalSystemConfig {
     @Value("${app.cep.api}")
     private String apiConfig;
 
-//    @Value("${app.google-maps.api-key}")
-//    private String apiKey;
 
     @Value("${app.cep.fallback-order}")
     private List<String> falbackOrder;
